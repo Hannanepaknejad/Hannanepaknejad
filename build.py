@@ -77,9 +77,9 @@ def footer():
 					<section>
 						<h2>Follow</h2>
 						<ul class="icons">
-							<li><a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<li><a href="mailto:hannane@example.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://www.instagram.com/hannane.paknejad/" target="_blank" rel="noopener" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://www.linkedin.com/in/hannane-paknejad/" target="_blank" rel="noopener" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:hannanepaknejad@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 					</section>
 					<ul class="copyright">
@@ -101,7 +101,7 @@ def footer():
 </html>
 '''
 
-def page_start(title):
+def page_start(title, extra_head=""):
     return f'''<!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
@@ -116,6 +116,7 @@ def page_start(title):
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		{extra_head}
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -146,9 +147,9 @@ index_html = page_start("Home") + f'''
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>I'm Hannane Paknejad, an architect designing spaces<br />
-								that balance function, light, and material honesty.</h1>
-								<p>This is a selection of my residential, commercial, cultural and urban work. Replace this paragraph with your own introduction — who you are, what you focus on, and what makes your approach distinct.</p>
+								<h1>I'm Hannane Paknejad, an architect who turns<br />
+								ideas into livable, thoughtful spaces.</h1>
+								<p>I design residential, commercial, and cultural spaces with an emphasis on light, proportion, and material honesty. Each project starts with a question — how people will actually move through and live in the space — and the design follows from there. Below is a selection of my recent work.</p>
 							</header>
 							<section class="tiles">
 {tiles_html}
@@ -162,15 +163,41 @@ with open(f"{OUT}/index.html", "w", encoding="utf-8") as f:
     f.write(index_html)
 
 # ---------------- about.html ----------------
-about_html = page_start("About") + '''
+ABOUT_STYLE = '''<style>
+  .about-photo {
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-image: url('images/about-by.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+  }
+  .about-photo__logo {
+    width: 300px;
+    height: auto;
+    opacity: 1;
+  }
+  #main p {
+    color: #222222;
+    font-weight: 600;
+  }
+</style>'''
+
+about_html = page_start("About", extra_head=ABOUT_STYLE) + '''
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
 							<h1>About</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Replace this paragraph with your real biography: where you studied, the offices or studios you've worked with, and the kind of projects you're drawn to — residential, adaptive reuse, public space, and so on.</p>
-							<p>Replace this paragraph with your design philosophy: how you approach a brief, the principles you always return to, and what a client or collaborator can expect from working with you.</p>
-							<p>Replace this paragraph with tools and skills: software (AutoCAD, Revit, SketchUp, Rhino, Lumion, V-Ray), languages, and any certifications or awards worth mentioning.</p>
+							<div class="about-photo">
+								<img src="images/HANA1.png" alt="HANA logo" class="about-photo__logo" />
+							</div>
+							<p>I'm an architect now based in Vancouver, Canada, with five years of experience designing residential, commercial, and cultural spaces in Tabriz, Iran. Over that time I've worked on projects ranging from private homes to small public spaces, always with close attention to how a building responds to its site, its climate, and the people who use it.</p>
+							<p>My approach starts with the brief, not the form — I ask what a space needs to do before I decide what it should look like. I care about natural light, honest materials, and details that hold up over time, not just in a rendering. Good architecture, to me, is quiet: it serves the people in it without demanding attention for itself.</p>
+							<p>Software: AutoCAD, Revit, SketchUp, and Lumion for visualization. I work in both Persian and English, and I'm currently looking to bring that experience into new projects in Vancouver and beyond.</p>
 						</div>
 					</div>
 
