@@ -177,9 +177,17 @@ ABOUT_STYLE = '''<style>
     border-radius: 6px;
   }
   .about-photo__logo {
-    width: 300px;
+    width: 110px;
     height: auto;
     opacity: 1;
+  }
+  .about-photo__avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
   }
   #main p {
     color: #222222;
@@ -194,6 +202,7 @@ about_html = page_start("About", extra_head=ABOUT_STYLE) + '''
 							<h1>About</h1>
 							<div class="about-photo">
 								<img src="images/HANA1.png" alt="HANA logo" class="about-photo__logo" />
+								<img src="images/hannane.jpg" alt="Hannane Paknejad" class="about-photo__avatar" />
 							</div>
 							<p>I'm an architect now based in Vancouver, Canada, with five years of experience designing residential, commercial, and cultural spaces in Tabriz, Iran. Over that time I've worked on projects ranging from private homes to small public spaces, always with close attention to how a building responds to its site, its climate, and the people who use it.</p>
 							<p>My approach starts with the brief, not the form — I ask what a space needs to do before I decide what it should look like. I care about natural light, honest materials, and details that hold up over time, not just in a rendering. Good architecture, to me, is quiet: it serves the people in it without demanding attention for itself.</p>
