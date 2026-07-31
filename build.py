@@ -28,7 +28,7 @@ HEADER = '''<!-- Header -->
 
 					<!-- Logo -->
 						<a href="index.html" class="logo">
-							<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Hannane Paknejad</span>
+							<span class="symbol"><img src="images/HANA1.png" alt="HANA logo" /></span><span class="title">Hannane Paknejad</span>
 						</a>
 
 					<!-- Nav -->
